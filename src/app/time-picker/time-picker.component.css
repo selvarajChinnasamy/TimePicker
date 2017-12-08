@@ -15,6 +15,22 @@
     margin-top:2%;
     margin-left:10%;
     width:80%;
-    min-height: 60%;
+    min-height: 30%;
     background:	white;
 }
+.daysCheckbox3{
+    zoom:1.5;    
+    }
+
+    .glyphicon-chevron-down{
+        color:rgb(87, 88, 180);
+    }
+    .active1{
+        margin-left: 12%;
+        position: absolute;
+    }
+    .the{
+        margin-left: 20px;
+        position: absolute;
+    }
+   

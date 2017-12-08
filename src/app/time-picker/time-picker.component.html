@@ -2,14 +2,14 @@
   <div class="card">
   <table class="table">
        <tr>
-        <th><span class="glyphicon glyphicon-chevron-down"></span>  Shift2</th>
-        <th>Start time</th>
-        <th>End time</th>
-        <th>Active <input type="checkbox"></th>
+        <th class="the"><span class="glyphicon glyphicon-chevron-down" ></span>  Shift2</th>
+        <th class="the1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start time</th>
+        <th class="the2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End time</th>
+        <th class="active1">Active</th><th  class="col-md-1"><input class="daysCheckbox3" type="checkbox"></th>
       </tr>
       <tr>
         <td class="col-md-2">
-          <div class="text"><input type="checkbox">&nbsp;&nbsp;&nbsp;Monday</div>
+          <div class="text"><input class="daysCheckbox3" type="checkbox">&nbsp;&nbsp;&nbsp;Monday</div>
         </td>
         <td class="col-md-2">
           <ngb-timepicker [(ngModel)]="timemon" [meridian]="true"></ngb-timepicker>
@@ -18,12 +18,12 @@
           <ngb-timepicker [(ngModel)]="timemon1" [meridian]="true"></ngb-timepicker>
         </td>
         <td class="col-md-2">
-          <button type="button" class="btn">APPLY FOR ALL WEEK</button>
+          <button type="button" colspan="2" class="btn">APPLY FOR ALL WEEK</button>
         </td>
       </tr>
       <tr>
         <td class="col-md-2">
-          <div class="text"><input type="checkbox">&nbsp;&nbsp;&nbsp;Tuesday</div>
+          <div class="text"><input class="daysCheckbox3" type="checkbox">&nbsp;&nbsp;&nbsp;Tuesday</div>
         </td>
         <td class="col-md-2">
           <ngb-timepicker [(ngModel)]="timetue" [meridian]="true"></ngb-timepicker>
@@ -32,12 +32,12 @@
           <ngb-timepicker [(ngModel)]="timetue1" [meridian]="true"></ngb-timepicker>
         </td>
         <td class="col-md-2">
-          <button type="button" class="btn">APPLY FOR ALL WEEK</button>
+          <button type="button" class="btn">COPPY THE ABOVE</button>
         </td>
       </tr>
       <tr>
         <td class="col-md-2">
-            <div class="text"><input type="checkbox">&nbsp;&nbsp;&nbsp;Wednesday</div>
+            <div class="text"><input class="daysCheckbox3" type="checkbox">&nbsp;&nbsp;&nbsp;Wednesday</div>
         </td>
         <td class="col-md-2">
           <ngb-timepicker [(ngModel)]="timewed" [meridian]="true"></ngb-timepicker>
@@ -46,12 +46,12 @@
           <ngb-timepicker [(ngModel)]="timewed1" [meridian]="true"></ngb-timepicker>
         </td>
         <td class="col-md-2">
-          <button type="button" class="btn">APPLY FOR ALL WEEK</button>
+          <button type="button" class="btn">COPPY THE ABOVE</button>
         </td>
       </tr>
       <tr>
           <td class="col-md-2">
-            <div class="text"><input type="checkbox">&nbsp;&nbsp;&nbsp;Thursday</div>
+            <div class="text"><input class="daysCheckbox3" type="checkbox">&nbsp;&nbsp;&nbsp;Thursday</div>
           </td>
           <td class="col-md-2">
             <ngb-timepicker [(ngModel)]="timeth" [meridian]="true"></ngb-timepicker>
@@ -60,12 +60,12 @@
             <ngb-timepicker [(ngModel)]="timeth1" [meridian]="true"></ngb-timepicker>
           </td>
           <td class="col-md-2">
-            <button type="button" class="btn">APPLY FOR ALL WEEK</button>
+            <button type="button" class="btn">COPPY THE ABOVE</button>
           </td>
         </tr>
         <tr>
           <td class="col-md-2">
-            <div class="text"><input  type="checkbox">&nbsp;&nbsp;&nbsp;Friday</div>
+            <div class="text"><input  class="daysCheckbox3" type="checkbox">&nbsp;&nbsp;&nbsp;Friday</div>
           </td>
           <td class="col-md-2">
             <ngb-timepicker [(ngModel)]="timefr" [meridian]="true"></ngb-timepicker>
@@ -74,12 +74,12 @@
             <ngb-timepicker [(ngModel)]="timefr1" [meridian]="true"></ngb-timepicker>
           </td>
           <td class="col-md-2">
-            <button type="button" class="btn">APPLY FOR ALL WEEK</button>
+            <button type="button" class="btn">COPPY THE ABOVE</button>
           </td>
         </tr>
         <tr>
           <td class="col-md-2">
-              <div class="text"><input type="checkbox">&nbsp;&nbsp;&nbsp;Saturday</div>
+              <div class="text"><input class="daysCheckbox3" type="checkbox">&nbsp;&nbsp;&nbsp;Saturday</div>
           </td>
           <td class="col-md-2">
             <ngb-timepicker [(ngModel)]="timesa" [meridian]="true"></ngb-timepicker>
@@ -88,12 +88,12 @@
             <ngb-timepicker [(ngModel)]="timesa1" [meridian]="true"></ngb-timepicker>
           </td>
           <td class="col-md-2">
-            <button type="button" class="btn">APPLY FOR ALL WEEK</button>
+            <button type="button" class="btn">COPPY THE ABOVE</button>
           </td>
         </tr>
         <tr>
             <td class="col-md-2">
-                <div class="text"><input type="checkbox">&nbsp;&nbsp;&nbsp;Sunday</div>
+                <div class="text"><input class="daysCheckbox3" type="checkbox">&nbsp;&nbsp;&nbsp;Sunday</div>
             </td>
             <td class="col-md-2">
               <ngb-timepicker [(ngModel)]="timesu" [meridian]="true"></ngb-timepicker>
@@ -102,7 +102,7 @@
               <ngb-timepicker [(ngModel)]="timesu1" [meridian]="true"></ngb-timepicker>
             </td>
             <td class="col-md-2">
-              <button type="button" class="btn">APPLY FOR ALL WEEK</button>
+              <button type="button" class="btn">COPPY THE ABOVE</button>
             </td>
           </tr>
   </table>
