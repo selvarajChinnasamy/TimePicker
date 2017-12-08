@@ -1,0 +1,20 @@
+.text{
+    margin-top:35px;
+}
+.btn{
+    margin-top: 32px;
+    width:200px;
+}
+.container1{
+    background: #DCDCDC;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.card{
+    margin-top:2%;
+    margin-left:10%;
+    width:80%;
+    min-height: 60%;
+    background:	white;
+}
