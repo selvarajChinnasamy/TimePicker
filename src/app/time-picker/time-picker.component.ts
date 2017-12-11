@@ -12,9 +12,9 @@ export class TimePickerComponent {
   mrg1=false; mrg2=false; mrg3=false;
   createTimeings(){
     return this.fb.group({
-      hours: ['', [Validators.required]],
-      minutes: ['', [Validators.required]],
-      seasion: ['', [Validators.required]],
+      hours: [0, [Validators.required]],
+      minutes: [0, [Validators.required]],
+      seasion: ['AM', [Validators.required]],
      });
   }
   createTimes(){
@@ -52,18 +52,45 @@ export class TimePickerComponent {
 console.log(cntr);
 if(cntr=='monmrg'){
   if(this.mrg1==true){
-    let num=this.shift1.controls['monday'][0].controls['startTime'].get('hours');
-    console.log(num);
- console.log(this.shift1.controls.monday.controls[0].controls.startTime.controls[0].controls.hours.setValue(10));
+    let num=this.shift1.value.monday[0].startTime[0].hours+1;
+    this.shift1.controls.monday.controls[0].controls.startTime.controls[0].controls.hours.setValue(num);
   }else if(this.mrg2==true){
-    console.log(this.fb.array);
+    let num=this.shift1.value.monday[0].startTime[0].minutes+1;
+    this.shift1.controls.monday.controls[0].controls.startTime.controls[0].controls.minutes.setValue(num);
   }else if(this.mrg3==true){
-    console.log(this.fb.array);
+    let num=this.shift1.value.monday[0].startTime[0].seasion;
+    if(num=='AM'){
+      this.shift1.controls.monday.controls[0].controls.startTime.controls[0].controls.seasion.setValue('PM');
+    }else{
+      this.shift1.controls.monday.controls[0].controls.startTime.controls[0].controls.seasion.setValue('AM');
+    }
   }
+}else if(cntr=='moneve'){
+  if(this.mrg1==true){
+    let num=this.shift1.value.monday[0].endTime[0].hours+1;
+    this.shift1.controls.monday.controls[0].controls.endTime.controls[0].controls.hours.setValue(num);
+  }else if(this.mrg2==true){
+    let num=this.shift1.value.monday[0].endTime[0].minutes+1;
+    this.shift1.controls.monday.controls[0].controls.endTime.controls[0].controls.minutes.setValue(num);
+  }else if(this.mrg3==true){
+    let num=this.shift1.value.monday[0].endTime[0].seasion;
+    if(num=='AM'){
+      this.shift1.controls.monday.controls[0].controls.endTime.controls[0].controls.seasion.setValue('PM');
+    }else{
+      this.shift1.controls.monday.controls[0].controls.endTime.controls[0].controls.seasion.setValue('AM');
+    }
 }
   }
-  decrement(cntr){
-    console.log(this.mrg1,this.mrg2,this.mrg3);
-console.log(cntr);
+}
+  decrement(cntr,se){
+  if(cntr=='monday'){
+    if(se=='mrg'){
+      console.log(typeof(cntr));
+      if(this.mrg1==true){
+        let num=this.shift1.value.cntr[0].startTime[0].hours-1;
+        this.shift1.controls.cntr.controls[0].controls.startTime.controls[0].controls.hours.setValue(num);
+      }
+    }
   }
+}
 }

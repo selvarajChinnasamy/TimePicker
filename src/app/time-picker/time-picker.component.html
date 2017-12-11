@@ -32,7 +32,7 @@
                     value="" />
 
                   <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                  <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                  <span (click)="decrement('monday','mrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                 </div>
               </div>
             </td>
@@ -40,13 +40,13 @@
               <div formArrayName="endTime">
                 <div class="boxinput" formGroupName="0">
 
-                  <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                  <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                  <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                  <input formControlName="hours" (focus)="mrg1=true;mrg2=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                  <input formControlName="minutes" (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                  <input formControlName="seasion" (focus)="mrg3=true;mrg2=false;mrg1=false" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                     value="" />
 
-                  <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                  <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                  <span (click)="increment('moneve')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                  <span (click)="decrement('moneve')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
 
                 </div>
               </div>
@@ -118,13 +118,13 @@
                   <div formArrayName="endTime">
                     <div class="boxinput" formGroupName="0">
     
-                      <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                      <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                      <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                      <input formControlName="hours" (focus)="mrg1=true;mrg2=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                      <input formControlName="minutes" (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                      <input formControlName="seasion" (focus)="mrg3=true;mrg2=false;mrg1=false" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                         value="" />
     
-                      <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                      <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                      <span (click)="increment()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                      <span (click)="decrement()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
     
                     </div>
                   </div>
@@ -157,13 +157,13 @@
                     <div formArrayName="endTime">
                       <div class="boxinput" formGroupName="0">
       
-                        <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                        <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                        <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                        <input formControlName="hours"  (focus)="mrg1=true;mrg2=false;mrg3=false"  type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                        <input formControlName="minutes"  (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                        <input formControlName="seasion" (focus)="mrg3=true;mrg2=false;mrg1=false" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                           value="" />
       
-                        <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                        <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                        <span (click)="increment()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                        <span (click)="decrement()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
       
                       </div>
                     </div>
