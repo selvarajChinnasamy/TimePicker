@@ -47,15 +47,14 @@ export class TimePickerComponent {
   ngOnInit(){
    this.buildForm();
   }
-  getMonday(): FormArray {
-    return <FormArray>this.shift1.controls['monday'];
-  }
   increment(cntr){
     console.log(this.mrg1,this.mrg2,this.mrg3);
 console.log(cntr);
 if(cntr=='monmrg'){
   if(this.mrg1==true){
-    (<FormControl>this.shift1.controls['monday'][0].controls['startTime'][0].controls['hours'].patchValue(0));
+    let num=this.shift1.controls['monday'][0].controls['startTime'].get('hours');
+    console.log(num);
+ console.log(this.shift1.controls.monday.controls[0].controls.startTime.controls[0].controls.hours.setValue(10));
   }else if(this.mrg2==true){
     console.log(this.fb.array);
   }else if(this.mrg3==true){
