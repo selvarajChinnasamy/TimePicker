@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-time-picker',
@@ -7,184 +7,64 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./time-picker.component.css']
 })
 export class TimePickerComponent {
-  changmon1 = false;
-  mon = false;
-  mon1 = false;
-  mon2 = false;
-  monn = false;
-  monn1 = false;
-  monn2 = false;
-  rForm: FormGroup;
-  timemon = { hour: 13, minute: 30 };
-  timemon1 = { hour: 13, minute: 30 };
-  timetue = { hour: 13, minute: 30 };
-  timetue1 = { hour: 13, minute: 30 };
-  timewed = { hour: 13, minute: 30 };
-  timewed1 = { hour: 13, minute: 30 };
-  timeth = { hour: 13, minute: 30 };
-  timeth1 = { hour: 13, minute: 30 };
-  timefr = { hour: 13, minute: 30 };
-  timefr1 = { hour: 13, minute: 30 };
-  timesa = { hour: 13, minute: 30 };
-  timesa1 = { hour: 13, minute: 30 };
-  timesu = { hour: 13, minute: 30 };
-  timesu1 = { hour: 13, minute: 30 };
-  changemon() {
-    this.changmon1 = !this.changmon1;
+  shift1: FormGroup;
+  shift2:FormGroup;
+  mrg1=false; mrg2=false; mrg3=false;
+  createTimeings(){
+    return this.fb.group({
+      hours: ['', [Validators.required]],
+      minutes: ['', [Validators.required]],
+      seasion: ['', [Validators.required]],
+     });
   }
-  constructor(private fb: FormBuilder) {
-    this.rForm = fb.group({
-      'monday': [null, Validators.required],
-      'monday1': [null, Validators.required],
-      'monday2': [null, Validators.required],
-      'mondayy': [null, Validators.required],
-      'mondayy1': [null, Validators.required],
-      'mondayy2': [null, Validators.required],
+  createTimes(){
+    return this.fb.group({
+     startTime:this.fb.array([this.createTimeings()]),
+     endTime:this.fb.array([this.createTimeings()]),
     });
   }
-  onFocus() {
-    this.mon = true;
-    this.mon1 = false;
-    this.mon2 = false;
+  buildForm(){
+    this.shift1 = this.fb.group({
+      'monday': this.fb.array([this.createTimes()]),
+      'tuesday': this.fb.array([this.createTimes()]),
+      'wednesday': this.fb.array([this.createTimes()]),
+      'thursday': this.fb.array([this.createTimes()]),
+      'friday': this.fb.array([this.createTimes()]),
+      'saturday': this.fb.array([this.createTimes()]),
+      'sunday': this.fb.array([this.createTimes()]),
+    });
+    this.shift2 = this.fb.group({
+      'monday': this.fb.array([this.createTimes()]),
+      'tuesday': this.fb.array([this.createTimes()]),
+      'wednesday': this.fb.array([this.createTimes()]),
+      'thursday': this.fb.array([this.createTimes()]),
+      'friday': this.fb.array([this.createTimes()]),
+      'saturday': this.fb.array([this.createTimes()]),
+      'sunday': this.fb.array([this.createTimes()]),
+    });
   }
-  onFocus1() {
-    this.mon = false;
-    this.mon1 = true;
-    this.mon2 = false;
+  constructor(private fb: FormBuilder) { }
+  ngOnInit(){
+   this.buildForm();
   }
-  onFocus2() {
-    this.mon = false;
-    this.mon1 = false;
-    this.mon2 = true;
+  getMonday(): FormArray {
+    return <FormArray>this.shift1.controls['monday'];
   }
-  onFocuss() {
-    this.monn = true;
-    this.monn1 = false;
-    this.monn2 = false;
-  }
-  onFocuss1() {
-    this.monn = false;
-    this.monn1 = true;
-    this.monn2 = false;
-  }
-  onFocuss2() {
-    this.monn = false;
-    this.monn1 = false;
-    this.monn2 = true;
-  }
-
-  increment() {
-    if (this.mon == true) {
-      if (this.rForm.controls['monday'].value =='') {
-        let num = 0;
-      } else {
-        let num = parseInt(this.rForm.controls['monday'].value);
-      }
-      num = num + 1;
-      console.log(num);
-      this.rForm.controls['monday'].setValue(num);
-    } else if (this.mon1 == true) {
-      if (this.rForm.controls['monday1'].value == null) {
-        let num = 0;
-      } else {
-        let num = parseInt(this.rForm.controls['monday1'].value);
-      }
-      num = num + 1;
-      console.log(num);
-      this.rForm.controls['monday1'].setValue(num);
-    } else if (this.mon2 == true) {
-      if(this.rForm.controls['monday2'].value =='AM')
-      {
-        this.rForm.controls['monday2'].setValue('PM');
-      }else{
-        this.rForm.controls['monday2'].setValue('AM');
-      }
+  increment(cntr){
+    console.log(this.mrg1,this.mrg2,this.mrg3);
+console.log(cntr);
+if(cntr=='monmrg'){
+  if(this.mrg1==true){
+    (<FormControl>this.shift1.controls['monday'][0].controls['startTime'][0].controls['hours'].patchValue(0));
+  }else if(this.mrg2==true){
+    console.log(this.fb.array);
+  }else if(this.mrg3==true){
+    console.log(this.fb.array);
   }
 }
-  decrement() {
-    console.log('called');
-    if (this.mon == true) {
-      if (this.rForm.controls['monday'].value == null) {
-        let num = 0;
-      } else {
-        let num = parseInt(this.rForm.controls['monday'].value);
-      }
-      num = num - 1;
-      console.log(num);
-      this.rForm.controls['monday'].setValue(num);
-    } else if (this.mon1 == true) {
-      if (this.rForm.controls['monday1'].value == null) {
-        let num = 0;
-      } else {
-        let num = parseInt(this.rForm.controls['monday1'].value);
-      }
-      num = num - 1;
-      console.log(num);
-      this.rForm.controls['monday1'].setValue(num);
-    } else if (this.mon2 == true) {
-      if(this.rForm.controls['monday2'].value =='AM')
-      {
-        this.rForm.controls['monday2'].setValue('PM');
-      }else{
-        this.rForm.controls['monday2'].setValue('AM');
-      }
   }
-}
-increment1() {
-  if (this.monn == true) {
-    if (this.rForm.controls['mondayy'].value == null) {
-      let num = 0;
-    } else {
-      let num = parseInt(this.rForm.controls['mondayy'].value);
-    }
-    num = num + 1;
-    console.log(num);
-    this.rForm.controls['mondayy'].setValue(num);
-  } else if (this.monn1 == true) {
-    if (this.rForm.controls['mondayy1'].value == null) {
-      let num = 0;
-    } else {
-      let num = parseInt(this.rForm.controls['mondayy1'].value);
-    }
-    num = num + 1;
-    console.log(num);
-    this.rForm.controls['mondayy1'].setValue(num);
-  } else if (this.monn2 == true) {
-    if(this.rForm.controls['mondayy2'].value =='AM')
-    {
-      this.rForm.controls['mondayy2'].setValue('PM');
-    }else{
-      this.rForm.controls['mondayy2'].setValue('AM');
-    }
-}
-}
-decrement1() {
-  console.log('called');
-  if (this.monn == true) {
-    if (this.rForm.controls['mondayy'].value == null) {
-      let num = 0;
-    } else {
-      let num = parseInt(this.rForm.controls['mondayy'].value);
-    }
-    num = num - 1;
-    console.log(num);
-    this.rForm.controls['mondayy'].setValue(num);
-  } else if (this.monn1 == true) {
-    if (this.rForm.controls['mondayy1'].value == null) {
-      let num = 0;
-    } else {
-      let num = parseInt(this.rForm.controls['mondayy1'].value);
-    }
-    num = num - 1;
-    console.log(num);
-    this.rForm.controls['mondayy1'].setValue(num);
-  } else if (this.monn2 == true) {
-    if(this.rForm.controls['mondayy2'].value =='AM')
-    {
-      this.rForm.controls['mondayy2'].setValue('PM');
-    }else{
-      this.rForm.controls['mondayy2'].setValue('AM');
-    }
-}
-}
+  decrement(cntr){
+    console.log(this.mrg1,this.mrg2,this.mrg3);
+console.log(cntr);
+  }
 }
