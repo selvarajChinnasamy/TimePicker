@@ -1,6 +1,5 @@
 <div class="container1">
   <div class="card">
-      <button (click)="dates('shift1')">Date</button>
     <form [formGroup]="shift1" role="form">
       <table class="table table-borderless">
         <tr>
@@ -26,7 +25,7 @@
             </td>
             <td formGroupName="0">
               <div formArrayName="startTime">
-                <div class="boxinput" formGroupName="0">
+                <div [ngStyle]="{'backgroundColor': monday1 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                   <input  (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                   <input  (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                   <input  (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -39,9 +38,9 @@
             </td>
             <td formGroupName="0">
               <div formArrayName="endTime">
-                <div class="boxinput" formGroupName="0">
+                <div [ngStyle]="{'backgroundColor': monday2 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
 
-                  <input formControlName="hours" (focus)="mrg1=true;mrg2=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                  <input  formControlName="hours" (focus)="mrg1=true;mrg2=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                   <input formControlName="minutes" (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                   <input formControlName="seasion" (focus)="mrg3=true;mrg2=false;mrg1=false" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                     value="" />
@@ -65,7 +64,7 @@
               </td>
               <td formGroupName="0">
                 <div formArrayName="startTime">
-                  <div class="boxinput" formGroupName="0">
+                  <div  [ngStyle]="{'backgroundColor': tuesday1 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                     <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                     <input  (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                     <input  (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -78,9 +77,9 @@
               </td>
               <td formGroupName="0">
                 <div formArrayName="endTime">
-                  <div class="boxinput" formGroupName="0">
+                  <div [ngStyle]="{'backgroundColor': tuesday2 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
   
-                    <input (focus)="mrg1=true;mrg2=false;mrg3=false"  formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                    <input  (focus)="mrg1=true;mrg2=false;mrg3=false"  formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                     <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                     <input (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                       value="" />
@@ -104,7 +103,7 @@
                 </td>
                 <td formGroupName="0">
                   <div formArrayName="startTime">
-                    <div class="boxinput" formGroupName="0">
+                    <div [ngStyle]="{'backgroundColor': wednesday1 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                       <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                       <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                       <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -117,7 +116,7 @@
                 </td>
                 <td formGroupName="0">
                   <div formArrayName="endTime">
-                    <div class="boxinput" formGroupName="0">
+                    <div [ngStyle]="{'backgroundColor': wednesday2 == true ? '	#FFFF00' : '#F5F5F5' }"  class="boxinput" formGroupName="0">
     
                       <input formControlName="hours" (focus)="mrg1=true;mrg2=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                       <input formControlName="minutes" (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -143,7 +142,7 @@
                   </td>
                   <td formGroupName="0">
                     <div formArrayName="startTime">
-                      <div class="boxinput" formGroupName="0">
+                      <div [ngStyle]="{'backgroundColor': thursday1 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                         <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                         <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                         <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -156,7 +155,7 @@
                   </td>
                   <td formGroupName="0">
                     <div formArrayName="endTime">
-                      <div class="boxinput" formGroupName="0">
+                      <div   [ngStyle]="{'backgroundColor': thursday2 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
       
                         <input formControlName="hours"  (focus)="mrg1=true;mrg2=false;mrg3=false"  type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                         <input formControlName="minutes"  (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -182,7 +181,7 @@
                     </td>
                     <td formGroupName="0">
                       <div formArrayName="startTime">
-                        <div class="boxinput" formGroupName="0">
+                        <div [ngStyle]="{'backgroundColor': friday1 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                           <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                           <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                           <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -195,7 +194,7 @@
                     </td>
                     <td formGroupName="0">
                       <div formArrayName="endTime">
-                        <div class="boxinput" formGroupName="0">
+                        <div [ngStyle]="{'backgroundColor': friday2 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
         
                           <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                           <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -221,7 +220,7 @@
                       </td>
                       <td formGroupName="0">
                         <div formArrayName="startTime">
-                          <div class="boxinput" formGroupName="0">
+                          <div [ngStyle]="{'backgroundColor': saturday1 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                             <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                             <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                             <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -234,7 +233,7 @@
                       </td>
                       <td formGroupName="0">
                         <div formArrayName="endTime">
-                          <div class="boxinput" formGroupName="0">
+                          <div [ngStyle]="{'backgroundColor': saturday2 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
           
                             <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                             <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -261,7 +260,7 @@
                         </td>
                         <td formGroupName="0">
                           <div formArrayName="startTime">
-                            <div class="boxinput" formGroupName="0">
+                            <div [ngStyle]="{'backgroundColor': sunday1 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                               <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                               <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                               <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -274,7 +273,7 @@
                         </td>
                         <td formGroupName="0">
                           <div formArrayName="endTime">
-                            <div class="boxinput" formGroupName="0">
+                            <div [ngStyle]="{'backgroundColor': sunday2 == true ? '	#FFFF00' : '#F5F5F5' }"  class="boxinput" formGroupName="0">
             
                               <input (focus)="mrg1=true;mrg2=false;mrg3=false"  formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                               <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -306,7 +305,6 @@
 
 
 <div class="card">
-    <button (click)="dates('shift2')">Date</button>
     <form [formGroup]="shift2" role="form">
     <table class="table table-borderless">
       <tr>
@@ -332,7 +330,7 @@
           </td>
           <td formGroupName="0">
             <div formArrayName="startTime">
-              <div class="boxinput" formGroupName="0">
+              <div  [ngStyle]="{'backgroundColor': monday3 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                 <input  (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                 <input  (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                 <input  (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -345,7 +343,7 @@
           </td>
           <td formGroupName="0">
             <div formArrayName="endTime">
-              <div class="boxinput" formGroupName="0">
+              <div [ngStyle]="{'backgroundColor': monday4 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
     
                 <input formControlName="hours" (focus)="mrg1=true;mrg2=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                 <input formControlName="minutes" (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -371,7 +369,7 @@
             </td>
             <td formGroupName="0">
               <div formArrayName="startTime">
-                <div class="boxinput" formGroupName="0">
+                <div [ngStyle]="{'backgroundColor': tuesday3 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                   <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                   <input  (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                   <input  (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -384,7 +382,7 @@
             </td>
             <td formGroupName="0">
               <div formArrayName="endTime">
-                <div class="boxinput" formGroupName="0">
+                <div [ngStyle]="{'backgroundColor': tuesday4 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
     
                   <input (focus)="mrg1=true;mrg2=false;mrg3=false"  formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                   <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -410,7 +408,7 @@
               </td>
               <td formGroupName="0">
                 <div formArrayName="startTime">
-                  <div class="boxinput" formGroupName="0">
+                  <div [ngStyle]="{'backgroundColor': wednesday3 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                     <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                     <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                     <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -423,7 +421,7 @@
               </td>
               <td formGroupName="0">
                 <div formArrayName="endTime">
-                  <div class="boxinput" formGroupName="0">
+                  <div [ngStyle]="{'backgroundColor': wednesday4 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
     
                     <input formControlName="hours" (focus)="mrg1=true;mrg2=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                     <input formControlName="minutes" (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -449,7 +447,7 @@
                 </td>
                 <td formGroupName="0">
                   <div formArrayName="startTime">
-                    <div class="boxinput" formGroupName="0">
+                    <div [ngStyle]="{'backgroundColor': thursday3 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                       <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                       <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                       <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -462,7 +460,7 @@
                 </td>
                 <td formGroupName="0">
                   <div formArrayName="endTime">
-                    <div class="boxinput" formGroupName="0">
+                    <div [ngStyle]="{'backgroundColor': thursday4 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
     
                       <input formControlName="hours"  (focus)="mrg1=true;mrg2=false;mrg3=false"  type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                       <input formControlName="minutes"  (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -488,7 +486,7 @@
                   </td>
                   <td formGroupName="0">
                     <div formArrayName="startTime">
-                      <div class="boxinput" formGroupName="0">
+                      <div [ngStyle]="{'backgroundColor': friday3 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                         <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                         <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                         <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -501,7 +499,7 @@
                   </td>
                   <td formGroupName="0">
                     <div formArrayName="endTime">
-                      <div class="boxinput" formGroupName="0">
+                      <div [ngStyle]="{'backgroundColor': friday4 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
       
                         <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                         <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -527,7 +525,7 @@
                     </td>
                     <td formGroupName="0">
                       <div formArrayName="startTime">
-                        <div class="boxinput" formGroupName="0">
+                        <div [ngStyle]="{'backgroundColor': saturday3 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                           <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                           <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                           <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -540,7 +538,7 @@
                     </td>
                     <td formGroupName="0">
                       <div formArrayName="endTime">
-                        <div class="boxinput" formGroupName="0">
+                        <div [ngStyle]="{'backgroundColor': saturday4 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
         
                           <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                           <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -567,7 +565,7 @@
                       </td>
                       <td formGroupName="0">
                         <div formArrayName="startTime">
-                          <div class="boxinput" formGroupName="0">
+                          <div [ngStyle]="{'backgroundColor': sunday3 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
                             <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                             <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                             <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
@@ -580,7 +578,7 @@
                       </td>
                       <td formGroupName="0">
                         <div formArrayName="endTime">
-                          <div class="boxinput" formGroupName="0">
+                          <div [ngStyle]="{'backgroundColor': sunday4 == true ? '	#FFFF00' : '#F5F5F5' }" class="boxinput" formGroupName="0">
           
                             <input (focus)="mrg1=true;mrg2=false;mrg3=false"  formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
                             <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
@@ -603,7 +601,7 @@
     </table>
     </form>
     </div>
-
-
+<br/>
+  <button (click)="save()">Date</button>
 <!---->
 </div>
