@@ -1,5 +1,6 @@
 <div class="container1">
   <div class="card">
+      <button (click)="dates('shift1')">Date</button>
     <form [formGroup]="shift1" role="form">
       <table class="table table-borderless">
         <tr>
@@ -26,13 +27,13 @@
             <td formGroupName="0">
               <div formArrayName="startTime">
                 <div class="boxinput" formGroupName="0">
-                  <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                  <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                  <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                  <input  (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                  <input  (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                  <input  (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                     value="" />
 
-                  <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                  <span (click)="decrement('monday','mrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                  <span (click)="valueUpdate('inc','start','monday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                  <span (click)="valueUpdate('dec','start','monday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                 </div>
               </div>
             </td>
@@ -45,14 +46,14 @@
                   <input formControlName="seasion" (focus)="mrg3=true;mrg2=false;mrg1=false" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                     value="" />
 
-                  <span (click)="increment('moneve')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                  <span (click)="decrement('moneve')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                  <span (click)="valueUpdate('inc','end','monday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                  <span (click)="valueUpdate('dec','end','monday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
 
                 </div>
               </div>
             </td>
             <td>
-              <button type="button" colspan="1" class="btn">APPLY FOR ALL WEEK</button>
+              <button type="button" (click)="applyforAll('shift1')" colspan="1" class="btn">APPLY FOR ALL WEEK</button>
             </td>
           </tr>
 
@@ -65,13 +66,13 @@
               <td formGroupName="0">
                 <div formArrayName="startTime">
                   <div class="boxinput" formGroupName="0">
-                    <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                    <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                    <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                    <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                    <input  (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                    <input  (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                       value="" />
   
-                    <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                    <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                    <span (click)="valueUpdate('inc','start','tuesday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                    <span (click)="valueUpdate('dec','start','tuesday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                   </div>
                 </div>
               </td>
@@ -79,19 +80,19 @@
                 <div formArrayName="endTime">
                   <div class="boxinput" formGroupName="0">
   
-                    <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                    <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                    <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                    <input (focus)="mrg1=true;mrg2=false;mrg3=false"  formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                    <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                    <input (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                       value="" />
   
-                    <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                    <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                    <span (click)="valueUpdate('inc','end','tuesday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                    <span (click)="valueUpdate('dec','end','tuesday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
   
                   </div>
                 </div>
               </td>
               <td>
-                <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
+                <button type="button" (click)="copytheAbove('shift1','tuesday')" colspan="1" class="btn">COPPY THE ABOVE</button>
               </td>
             </tr>
 
@@ -109,8 +110,8 @@
                       <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                         value="" />
     
-                      <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                      <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                      <span (click)="valueUpdate('inc','start','wednesday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                      <span (click)="valueUpdate('dec','start','wednesday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                     </div>
                   </div>
                 </td>
@@ -123,14 +124,14 @@
                       <input formControlName="seasion" (focus)="mrg3=true;mrg2=false;mrg1=false" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                         value="" />
     
-                      <span (click)="increment()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                      <span (click)="decrement()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                      <span (click)="valueUpdate('inc','end','wednesday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                      <span (click)="valueUpdate('dec','end','wednesday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
     
                     </div>
                   </div>
                 </td>
                 <td>
-                  <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
+                  <button type="button" (click)="copytheAbove('shift1','wednesday')" colspan="1" class="btn">COPPY THE ABOVE</button>
                 </td>
               </tr>
 
@@ -148,8 +149,8 @@
                         <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                           value="" />
       
-                        <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                        <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                        <span (click)="valueUpdate('inc','start','thursday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                        <span (click)="valueUpdate('dec','start','thursday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                       </div>
                     </div>
                   </td>
@@ -162,14 +163,14 @@
                         <input formControlName="seasion" (focus)="mrg3=true;mrg2=false;mrg1=false" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                           value="" />
       
-                        <span (click)="increment()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                        <span (click)="decrement()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                        <span (click)="valueUpdate('inc','end','thursday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                        <span (click)="valueUpdate('dec','end','thursday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
       
                       </div>
                     </div>
                   </td>
                   <td>
-                    <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
+                    <button type="button" (click)="copytheAbove('shift1','thursday')" colspan="1" class="btn">COPPY THE ABOVE</button>
                   </td>
                 </tr>
 
@@ -187,8 +188,8 @@
                           <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                             value="" />
         
-                          <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                          <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                          <span (click)="valueUpdate('inc','start','friday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                          <span (click)="valueUpdate('dec','start','friday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                         </div>
                       </div>
                     </td>
@@ -196,19 +197,19 @@
                       <div formArrayName="endTime">
                         <div class="boxinput" formGroupName="0">
         
-                          <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                          <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                          <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                          <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                          <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                          <input (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                             value="" />
         
-                          <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                          <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                          <span (click)="valueUpdate('inc','end','friday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                          <span (click)="valueUpdate('dec','end','friday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
         
                         </div>
                       </div>
                     </td>
                     <td>
-                      <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
+                      <button type="button" (click)="copytheAbove('shift1','friday')" colspan="1" class="btn">COPPY THE ABOVE</button>
                     </td>
                   </tr>
 
@@ -226,8 +227,8 @@
                             <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                               value="" />
           
-                            <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                            <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                            <span (click)="valueUpdate('inc','start','saturday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                            <span (click)="valueUpdate('dec','start','saturday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                           </div>
                         </div>
                       </td>
@@ -235,19 +236,19 @@
                         <div formArrayName="endTime">
                           <div class="boxinput" formGroupName="0">
           
-                            <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                            <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                            <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                            <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                            <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                            <input  (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                               value="" />
           
-                            <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                            <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                            <span (click)="valueUpdate('inc','end','saturday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                            <span (click)="valueUpdate('dec','end','saturday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
           
                           </div>
                         </div>
                       </td>
                       <td>
-                        <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
+                        <button type="button" (click)="copytheAbove('shift1','saturday')" colspan="1" class="btn">COPPY THE ABOVE</button>
                       </td>
                     </tr>
 
@@ -266,8 +267,8 @@
                               <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                                 value="" />
             
-                              <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                              <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                              <span (click)="valueUpdate('inc','start','sunday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                              <span (click)="valueUpdate('dec','start','sunday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                             </div>
                           </div>
                         </td>
@@ -275,19 +276,19 @@
                           <div formArrayName="endTime">
                             <div class="boxinput" formGroupName="0">
             
-                              <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                              <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                              <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                              <input (focus)="mrg1=true;mrg2=false;mrg3=false"  formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                              <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                              <input (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                                 value="" />
             
-                              <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                              <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                              <span (click)="valueUpdate('inc','end','sunday','shift1')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                              <span (click)="valueUpdate('dec','end','sunday','shift1')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
             
                             </div>
                           </div>
                         </td>
                         <td>
-                          <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
+                          <button type="button" (click)="copytheAbove('shift1','sunday')" colspan="1" class="btn">COPPY THE ABOVE</button>
                         </td>
                       </tr>
 
@@ -301,37 +302,111 @@
       </table>
     </form>
   </div>
+<!--Shift2-->
 
 
-
-
-
-
-
-
-  <div class="card">
-      <form [formGroup]="shift2" role="form">
-        <table class="table table-borderless">
-          <tr>
-            <th>
-              <span class="glyphicon glyphicon-triangle-bottom blue"></span>&nbsp;Shift2</th>
-            <th>Start time</th>
-            <th>End time</th>
-            <th>Active
-              <input type="checkbox">
-            </th>
+<div class="card">
+    <button (click)="dates('shift2')">Date</button>
+    <form [formGroup]="shift2" role="form">
+    <table class="table table-borderless">
+      <tr>
+        <th>
+          <span class="glyphicon glyphicon-triangle-bottom blue"></span>&nbsp;shift2</th>
+        <th>Start time</th>
+        <th>End time</th>
+        <th>Active
+          <input type="checkbox">
+        </th>
+      </tr>
+      <tbody class="tbody">
+    
+    
+    
+    
+    
+    
+    
+        <tr formArrayName="monday">
+          <td>
+            <input type="checkbox">&nbsp;&nbsp;&nbsp;Monday
+          </td>
+          <td formGroupName="0">
+            <div formArrayName="startTime">
+              <div class="boxinput" formGroupName="0">
+                <input  (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                <input  (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                <input  (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                  value="" />
+    
+                <span (click)="valueUpdate('inc','start','monday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                <span (click)="valueUpdate('dec','start','monday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+              </div>
+            </div>
+          </td>
+          <td formGroupName="0">
+            <div formArrayName="endTime">
+              <div class="boxinput" formGroupName="0">
+    
+                <input formControlName="hours" (focus)="mrg1=true;mrg2=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                <input formControlName="minutes" (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                <input formControlName="seasion" (focus)="mrg3=true;mrg2=false;mrg1=false" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                  value="" />
+    
+                <span (click)="valueUpdate('inc','end','monday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                <span (click)="valueUpdate('dec','end','monday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+    
+              </div>
+            </div>
+          </td>
+          <td>
+            <button type="button" (click)="applyforAll('shift2')" colspan="1" class="btn">APPLY FOR ALL WEEK</button>
+          </td>
+        </tr>
+    
+    
+    
+        <tr formArrayName="tuesday">
+            <td>
+              <input type="checkbox">&nbsp;&nbsp;&nbsp;Tuesday
+            </td>
+            <td formGroupName="0">
+              <div formArrayName="startTime">
+                <div class="boxinput" formGroupName="0">
+                  <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                  <input  (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                  <input  (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                    value="" />
+    
+                  <span (click)="valueUpdate('inc','start','tuesday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                  <span (click)="valueUpdate('dec','start','tuesday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                </div>
+              </div>
+            </td>
+            <td formGroupName="0">
+              <div formArrayName="endTime">
+                <div class="boxinput" formGroupName="0">
+    
+                  <input (focus)="mrg1=true;mrg2=false;mrg3=false"  formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                  <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                  <input (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                    value="" />
+    
+                  <span (click)="valueUpdate('inc','end','tuesday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                  <span (click)="valueUpdate('dec','end','tuesday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+    
+                </div>
+              </div>
+            </td>
+            <td>
+              <button type="button" (click)="copytheAbove('shift2','tuesday')" colspan="1" class="btn">COPPY THE ABOVE</button>
+            </td>
           </tr>
-          <tbody class="tbody">
-  
-  
-  
-  
-  
-  
-  
-            <tr formArrayName="monday">
+    
+    
+    
+          <tr formArrayName="wednesday">
               <td>
-                <input type="checkbox">&nbsp;&nbsp;&nbsp;Monday
+                <input type="checkbox">&nbsp;&nbsp;&nbsp;Wednesday
               </td>
               <td formGroupName="0">
                 <div formArrayName="startTime">
@@ -340,37 +415,37 @@
                     <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
                     <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                       value="" />
-  
-                    <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                    <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+    
+                    <span (click)="valueUpdate('inc','start','wednesday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                    <span (click)="valueUpdate('dec','start','wednesday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                   </div>
                 </div>
               </td>
               <td formGroupName="0">
                 <div formArrayName="endTime">
                   <div class="boxinput" formGroupName="0">
-  
-                    <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                    <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                    <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+    
+                    <input formControlName="hours" (focus)="mrg1=true;mrg2=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                    <input formControlName="minutes" (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                    <input formControlName="seasion" (focus)="mrg3=true;mrg2=false;mrg1=false" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                       value="" />
-  
-                    <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                    <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
-  
+    
+                    <span (click)="valueUpdate('inc','end','wednesday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                    <span (click)="valueUpdate('dec','end','wednesday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+    
                   </div>
                 </div>
               </td>
               <td>
-                <button type="button" colspan="1" class="btn">APPLY FOR ALL WEEK</button>
+                <button type="button" (click)="copytheAbove('shift2','wednesday')" colspan="1" class="btn">COPPY THE ABOVE</button>
               </td>
             </tr>
-  
-  
-  
-            <tr formArrayName="tuesday">
+    
+    
+    
+            <tr formArrayName="thursday">
                 <td>
-                  <input type="checkbox">&nbsp;&nbsp;&nbsp;Tuesday
+                  <input type="checkbox">&nbsp;&nbsp;&nbsp;Thursday
                 </td>
                 <td formGroupName="0">
                   <div formArrayName="startTime">
@@ -380,8 +455,8 @@
                       <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                         value="" />
     
-                      <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                      <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                      <span (click)="valueUpdate('inc','start','thursday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                      <span (click)="valueUpdate('dec','start','thursday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                     </div>
                   </div>
                 </td>
@@ -389,27 +464,27 @@
                   <div formArrayName="endTime">
                     <div class="boxinput" formGroupName="0">
     
-                      <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                      <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                      <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                      <input formControlName="hours"  (focus)="mrg1=true;mrg2=false;mrg3=false"  type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                      <input formControlName="minutes"  (focus)="mrg2=true;mrg1=false;mrg3=false" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                      <input formControlName="seasion" (focus)="mrg3=true;mrg2=false;mrg1=false" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                         value="" />
     
-                      <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                      <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                      <span (click)="valueUpdate('inc','end','thursday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                      <span (click)="valueUpdate('dec','end','thursday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
     
                     </div>
                   </div>
                 </td>
                 <td>
-                  <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
+                  <button type="button" (click)="copytheAbove('shift2','thursday')" colspan="1" class="btn">COPPY THE ABOVE</button>
                 </td>
               </tr>
-  
-  
-  
-              <tr formArrayName="wednesday">
+    
+    
+    
+              <tr formArrayName="friday">
                   <td>
-                    <input type="checkbox">&nbsp;&nbsp;&nbsp;Wednesday
+                    <input type="checkbox">&nbsp;&nbsp;&nbsp;Friday
                   </td>
                   <td formGroupName="0">
                     <div formArrayName="startTime">
@@ -419,8 +494,8 @@
                         <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                           value="" />
       
-                        <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                        <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                        <span (click)="valueUpdate('inc','start','friday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                        <span (click)="valueUpdate('dec','start','friday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                       </div>
                     </div>
                   </td>
@@ -428,27 +503,27 @@
                     <div formArrayName="endTime">
                       <div class="boxinput" formGroupName="0">
       
-                        <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                        <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                        <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                        <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                        <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                        <input (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                           value="" />
       
-                        <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                        <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                        <span (click)="valueUpdate('inc','end','friday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                        <span (click)="valueUpdate('dec','end','friday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
       
                       </div>
                     </div>
                   </td>
                   <td>
-                    <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
+                    <button type="button" (click)="copytheAbove('shift2','friday')" colspan="1" class="btn">COPPY THE ABOVE</button>
                   </td>
                 </tr>
-  
-  
-  
-                <tr formArrayName="thursday">
+    
+    
+    
+                <tr formArrayName="saturday">
                     <td>
-                      <input type="checkbox">&nbsp;&nbsp;&nbsp;Thursday
+                      <input type="checkbox">&nbsp;&nbsp;&nbsp;Saturday
                     </td>
                     <td formGroupName="0">
                       <div formArrayName="startTime">
@@ -458,8 +533,8 @@
                           <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                             value="" />
         
-                          <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                          <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                          <span (click)="valueUpdate('inc','start','saturday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                          <span (click)="valueUpdate('dec','start','saturday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                         </div>
                       </div>
                     </td>
@@ -467,27 +542,28 @@
                       <div formArrayName="endTime">
                         <div class="boxinput" formGroupName="0">
         
-                          <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                          <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                          <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                          <input (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                          <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                          <input  (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                             value="" />
         
-                          <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                          <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                          <span (click)="valueUpdate('inc','end','saturday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                          <span (click)="valueUpdate('dec','end','saturday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
         
                         </div>
                       </div>
                     </td>
                     <td>
-                      <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
+                      <button type="button" (click)="copytheAbove('shift2','saturday')" colspan="1" class="btn">COPPY THE ABOVE</button>
                     </td>
                   </tr>
-  
-  
-  
-                  <tr formArrayName="friday">
+    
+    
+    
+    
+                  <tr formArrayName="sunday">
                       <td>
-                        <input type="checkbox">&nbsp;&nbsp;&nbsp;Friday
+                        <input type="checkbox">&nbsp;&nbsp;&nbsp;Sunday
                       </td>
                       <td formGroupName="0">
                         <div formArrayName="startTime">
@@ -497,8 +573,8 @@
                             <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                               value="" />
           
-                            <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                            <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                            <span (click)="valueUpdate('inc','start','sunday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                            <span (click)="valueUpdate('dec','start','sunday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
                           </div>
                         </div>
                       </td>
@@ -506,118 +582,28 @@
                         <div formArrayName="endTime">
                           <div class="boxinput" formGroupName="0">
           
-                            <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                            <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                            <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
+                            <input (focus)="mrg1=true;mrg2=false;mrg3=false"  formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
+                            <input (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
+                            <input (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
                               value="" />
           
-                            <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                            <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
+                            <span (click)="valueUpdate('inc','end','sunday','shift2')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
+                            <span (click)="valueUpdate('dec','end','sunday','shift2')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
           
                           </div>
                         </div>
                       </td>
                       <td>
-                        <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
+                        <button type="button" (click)="copytheAbove('shift2','sunday')" colspan="1" class="btn">COPPY THE ABOVE</button>
                       </td>
                     </tr>
-  
-  
-  
-                    <tr formArrayName="saturday">
-                        <td>
-                          <input type="checkbox">&nbsp;&nbsp;&nbsp;Saturday
-                        </td>
-                        <td formGroupName="0">
-                          <div formArrayName="startTime">
-                            <div class="boxinput" formGroupName="0">
-                              <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                              <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                              <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
-                                value="" />
-            
-                              <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                              <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
-                            </div>
-                          </div>
-                        </td>
-                        <td formGroupName="0">
-                          <div formArrayName="endTime">
-                            <div class="boxinput" formGroupName="0">
-            
-                              <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                              <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                              <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
-                                value="" />
-            
-                              <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                              <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
-            
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <button type="button" colspan="1" class="btn">COPPY THE ABOVE</button>
-                        </td>
-                      </tr>
-  
-  
-  
-  
-                      <tr formArrayName="sunday">
-                          <td>
-                            <input type="checkbox">&nbsp;&nbsp;&nbsp;Sunday
-                          </td>
-                          <td formGroupName="0">
-                            <div formArrayName="startTime">
-                              <div class="boxinput" formGroupName="0">
-                                <input id="monn11" (focus)="mrg1=true;mrg2=false;mrg3=false" formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                                <input id="monn12" (focus)="mrg2=true;mrg1=false;mrg3=false" formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                                <input id="monn13" (focus)="mrg3=true;mrg2=false;mrg1=false" formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
-                                  value="" />
-              
-                                <span (click)="increment('monmrg')" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                                <span (click)="decrement('monmrg')" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
-                              </div>
-                            </div>
-                          </td>
-                          <td formGroupName="0">
-                            <div formArrayName="endTime">
-                              <div class="boxinput" formGroupName="0">
-              
-                                <input formControlName="hours" type="number" class="tel-number-field form-control col-md-2" name="tel_no_1" value="" />
-                                <input formControlName="minutes" type="number" class="tel-number-field form-control col-md-2" name="tel_no_2" value="" />
-                                <input formControlName="seasion" type="text" class="tel-number-field form-control col-md-2" style="width:25px;" name="tel_no_2"
-                                  value="" />
-              
-                                <span (click)="increment1()" class="glyphicon glyphicon-chevron-up move1 col-md-1"></span>
-                                <span (click)="decrement1()" class="glyphicon glyphicon-chevron-down move col-md-1"></span>
-              
-                              </div>
-                            </div>
-                          </td>
-                          <td>
-                            <button type="button" colspan="1" class="btn">APPLY FOR ALL WEEK</button>
-                          </td>
-                        </tr>
-  
-  
-  
-  
-  
-  
-          </tbody>
-  
-        </table>
-      </form>
+    
+      </tbody>
+    
+    </table>
+    </form>
     </div>
 
 
-
-
-
-
-
-
-
+<!---->
 </div>
