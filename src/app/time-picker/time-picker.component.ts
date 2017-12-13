@@ -83,9 +83,13 @@ export class TimePickerComponent {
     if ((cntr == 'inc') && (tim == 'start')) {
       if (this.mrg1 == true) {
         let num = this[form].value[val][0].startTime[0].hours + 1;
+        if(num>12){num=12;}
+        if(num<0){num=0;}
         this[form].controls[val].controls[0].controls.startTime.controls[0].controls.hours.setValue(num);
       } else if (this.mrg2 == true) {
         let num = this[form].value[val][0].startTime[0].minutes + 1;
+        if(num>60){num=60;}
+        if(num<0){num=0;}
         this[form].controls[val].controls[0].controls.startTime.controls[0].controls.minutes.setValue(num);
       } else if (this.mrg3 == true) {
         let num = this[form].value[val][0].startTime[0].seasion;
@@ -98,9 +102,13 @@ export class TimePickerComponent {
     } else if ((cntr == 'inc') && (tim == 'end')) {
       if (this.mrg1 == true) {
         let num = this[form].value[val][0].endTime[0].hours + 1;
+        if(num>12){num=12;}
+        if(num<0){num=0;}
         this[form].controls[val].controls[0].controls.endTime.controls[0].controls.hours.setValue(num);
       } else if (this.mrg2 == true) {
         let num = this[form].value[val][0].endTime[0].minutes + 1;
+        if(num>60){num=60;}
+        if(num<0){num=0;}
         this[form].controls[val].controls[0].controls.endTime.controls[0].controls.minutes.setValue(num);
       } else if (this.mrg3 == true) {
         let num = this[form].value[val][0].endTime[0].seasion;
@@ -113,9 +121,13 @@ export class TimePickerComponent {
     } else if ((cntr == 'dec') && (tim == 'start')) {
       if (this.mrg1 == true) {
         let num = this[form].value[val][0].startTime[0].hours - 1;
+        if(num>12){num=12;}
+        if(num<0){num=0;}
         this[form].controls[val].controls[0].controls.startTime.controls[0].controls.hours.setValue(num);
       } else if (this.mrg2 == true) {
         let num = this[form].value[val][0].startTime[0].minutes - 1;
+        if(num>60){num=60;}
+        if(num<0){num=0;}
         this[form].controls[val].controls[0].controls.startTime.controls[0].controls.minutes.setValue(num);
       } else if (this.mrg3 == true) {
         let num = this[form].value[val][0].startTime[0].seasion;
@@ -128,9 +140,13 @@ export class TimePickerComponent {
     } else if ((cntr == 'dec') && (tim == 'end')) {
       if (this.mrg1 == true) {
         let num = this[form].value[val][0].endTime[0].hours - 1;
+        if(num>12){num=12;}
+        if(num<0){num=0;}
         this[form].controls[val].controls[0].controls.endTime.controls[0].controls.hours.setValue(num);
       } else if (this.mrg2 == true) {
         let num = this[form].value[val][0].endTime[0].minutes - 1;
+        if(num>60){num=60;}
+        if(num<0){num=0;}
         this[form].controls[val].controls[0].controls.endTime.controls[0].controls.minutes.setValue(num);
       } else if (this.mrg3 == true) {
         let num = this[form].value[val][0].endTime[0].seasion;
@@ -396,294 +412,445 @@ mondaystart1.set({
   minute: this.endmin('shift2','sunday'),
   });
 
+  // duration = moment.duration(tuesdaystart.diff(mondayend));
+  // hours = duration.asHours();
+  // console.log('Diff:'+hours);
+  // if(hours<=0){
+  //   this.monday1=true;
+  //   this.monday2=true;
+  //   this.tuesday1=true;
+  //   this.tuesday2=true;
+  //   console.log('err');
+  //   // console.log(mondaystart._d);
+  //   // console.log(mondayend._d);
+  //   // console.log(tuesdaystart._d);
+  //   // console.log(tuesdayend._d);
+  //   return;
+  // }else{
+  //   this.monday1=false;
+  //   this.monday2=false;
+  //   this.tuesday1=false;
+  //   this.tuesday2=false;
+  // }
+
+  // var duration = moment.duration(tuesdaystart1.diff(mondayend1));
+  // var hours = duration.asHours();
+  // console.log('Diff:'+hours);
+  // if(hours<=0){
+  //   this.monday3=true;
+  //   this.monday4=true;
+  //   this.tuesday3=true;
+  //   this.tuesday4=true;
+  //   console.log('err');
+  //   // console.log(mondaystart1._d);
+  //   // console.log(mondayend1._d);
+  //   // console.log(tuesdaystart1._d);
+  //   // console.log(tuesdayend1._d);
+  //   return;
+  // }else{
+  //   this.monday3=false;
+  //   this.monday4=false;
+  //   this.tuesday3=false;
+  //   this.tuesday4=false;
+  // }
 
 
-  var duration = moment.duration(tuesdaystart1.diff(mondayend1));
+
+  var duration = moment.duration(tuesdaystart.diff(mondayend1));
   var hours = duration.asHours();
   console.log('Diff:'+hours);
-  if((hours<=0)||(hours>24)){
+  if(hours<=0){
     this.monday3=true;
     this.monday4=true;
-    this.tuesday3=true;
-    this.tuesday4=true;
-    console.log('err');
-    console.log(mondaystart1._d);
-    console.log(mondayend1._d);
-    console.log(tuesdaystart1._d);
-    console.log(tuesdayend1._d);
-  }else{
-    this.monday3=false;
-    this.monday4=false;
-    this.tuesday3=false;
-    this.tuesday4=false;
-  }
-
-
-  duration = moment.duration(tuesdaystart.diff(mondayend));
-  hours = duration.asHours();
-  console.log('Diff:'+hours);
-  if((hours<=0)||(hours>24)){
-    this.monday1=true;
-    this.monday2=true;
     this.tuesday1=true;
     this.tuesday2=true;
     console.log('err');
-    console.log(mondaystart._d);
-    console.log(mondayend._d);
-    console.log(tuesdaystart._d);
-    console.log(tuesdayend._d);
+    // console.log(mondaystart1._d);
+    // console.log(mondayend1._d);
+    // console.log(tuesdaystart._d);
+    // console.log(tuesdayend._d);
+    return;
   }else{
-    this.monday1=false;
-    this.monday2=false;
+    console.log('save with validation success ');
+    this.monday3=false;
+    this.monday4=false;
     this.tuesday1=false;
-    this.tuesday2=false;
+    this.tuesday1=false;
   }
-
 
 
   duration = moment.duration(mondaystart1.diff(mondayend));
   hours = duration.asHours();
   console.log('Diff:'+hours);
-  if((hours<=0)||(hours>=24)){
+  if(hours<=0){
     this.monday1=true;
     this.monday2=true;
     this.monday3=true;
     this.monday4=true;
     console.log('err');
-    console.log(mondaystart._d);
-    console.log(mondayend._d);
-    console.log(mondaystart1._d);
-    console.log(mondayend1._d);
+    // console.log(mondaystart._d);
+    // console.log(mondayend._d);
+    // console.log(mondaystart1._d);
+    // console.log(mondayend1._d);
+    return;
   }else{
+    console.log('save with validation success ');
     this.monday1=false;
     this.monday2=false;
     this.monday3=false;
     this.monday4=false;
   }
 
-  duration = moment.duration(wednesdaystart.diff(tuesdayend));
-  hours = duration.asHours();
-  console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
-    this.tuesday1=true;
-    this.tuesday2=true;
-    this.wednesday1=true;
-    this.wednesday2=true;
-    console.log('err');
-    console.log(tuesdaystart._d);
-    console.log(tuesdayend._d);
-    console.log(wednesdaystart._d);
-    console.log(wednesdayend._d);
-  }else{
-    this.tuesday1=false;
-    this.tuesday2=false;
-    this.wednesday1=false;
-    this.wednesday2=false;
-  }
+  // duration = moment.duration(wednesdaystart.diff(tuesdayend));
+  // hours = duration.asHours();
+  // console.log('Diff'+hours);
+  // if(hours<=0){
+  //   this.tuesday1=true;
+  //   this.tuesday2=true;
+  //   this.wednesday1=true;
+  //   this.wednesday2=true;
+  //   console.log('err');
+  //   // console.log(tuesdaystart._d);
+  //   // console.log(tuesdayend._d);
+  //   // console.log(wednesdaystart._d);
+  //   // console.log(wednesdayend._d);
+  //   return;
+  // }else{
+  //   this.tuesday1=false;
+  //   this.tuesday2=false;
+  //   this.wednesday1=false;
+  //   this.wednesday2=false;
+  // }
   
 
-  duration = moment.duration(wednesdaystart1.diff(tuesdayend1));
+  duration = moment.duration(wednesdaystart.diff(tuesdayend1));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
+  if(hours<=0){
     this.tuesday3=true;
     this.tuesday4=true;
-    this.wednesday3=true;
-    this.wednesday4=true;
-    console.log('err');
-    console.log(tuesdaystart1._d);
-    console.log(tuesdayend1._d);
-    console.log(wednesdaystart1._d);
-    console.log(wednesdayend1._d);
-  }else{
-    this.tuesday3=false;
-    this.tuesday4=false;
-    this.wednesday3=false;
-    this.wednesday4=false;
-  }
-
-
-
-  duration = moment.duration(thursdaystart.diff(wednesdayend));
-  hours = duration.asHours();
-  console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
-    this.thursday1=true;
-    this.thursday2=true;
     this.wednesday1=true;
     this.wednesday2=true;
     console.log('err');
-    console.log(wednesdaystart._d);
-    console.log(wednesdayend._d);
-    console.log(thursdaystart._d);
-    console.log(thursdayend._d);
+    // console.log(tuesdaystart1._d);
+    // console.log(tuesdayend1._d);
+    // console.log(wednesdaystart._d);
+    // console.log(wednesdayend._d);
+    return;
   }else{
-    this.thursday1=false;
-    this.thursday2=false;
+    console.log('save with validation success ');
+    this.tuesday3=false;
+    this.tuesday4=false;
     this.wednesday1=false;
     this.wednesday2=false;
   }
 
+  // duration = moment.duration(wednesdaystart1.diff(tuesdayend1));
+  // hours = duration.asHours();
+  // console.log('Diff'+hours);
+  // if(hours<=0){
+  //   this.tuesday3=true;
+  //   this.tuesday4=true;
+  //   this.wednesday3=true;
+  //   this.wednesday4=true;
+  //   console.log('err');
+  //   // console.log(tuesdaystart1._d);
+  //   // console.log(tuesdayend1._d);
+  //   // console.log(wednesdaystart1._d);
+  //   // console.log(wednesdayend1._d);
+  //   return;
+  // }else{
+  //   this.tuesday3=false;
+  //   this.tuesday4=false;
+  //   this.wednesday3=false;
+  //   this.wednesday4=false;
+  // }
 
-  duration = moment.duration(thursdaystart1.diff(wednesdayend1));
+
+
+  // duration = moment.duration(thursdaystart.diff(wednesdayend));
+  // hours = duration.asHours();
+  // console.log('Diff'+hours);
+  // if(hours<=0){
+  //   this.thursday1=true;
+  //   this.thursday2=true;
+  //   this.wednesday1=true;
+  //   this.wednesday2=true;
+  //   console.log('err');
+  //   // console.log(wednesdaystart._d);
+  //   // console.log(wednesdayend._d);
+  //   // console.log(thursdaystart._d);
+  //   // console.log(thursdayend._d);
+  //   return;
+  // }else{
+  //   this.thursday1=false;
+  //   this.thursday2=false;
+  //   this.wednesday1=false;
+  //   this.wednesday2=false;
+  // }
+
+
+  duration = moment.duration(thursdaystart.diff(wednesdayend1));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
-    this.thursday3=true;
-    this.thursday4=true;
+  if(hours<=0){
+    this.thursday1=true;
+    this.thursday2=true;
     this.wednesday3=true;
     this.wednesday4=true;
     console.log('err');
-    console.log(wednesdaystart1._d);
-    console.log(wednesdayend1._d);
-    console.log(thursdaystart1._d);
-    console.log(thursdayend1._d);
+    // console.log(wednesdaystart1._d);
+    // console.log(wednesdayend1._d);
+    // console.log(thursdaystart._d);
+    // console.log(thursdayend._d);
+    return;
   }else{
-    this.thursday3=false;
-    this.thursday4=false;
+    console.log('save with validation success ');
+    this.thursday1=false;
+    this.thursday2=false;
     this.wednesday3=false;
     this.wednesday4=false;
   }
+
+  // duration = moment.duration(thursdaystart1.diff(wednesdayend1));
+  // hours = duration.asHours();
+  // console.log('Diff'+hours);
+  // if(hours<=0){
+  //   this.thursday3=true;
+  //   this.thursday4=true;
+  //   this.wednesday3=true;
+  //   this.wednesday4=true;
+  //   console.log('err');
+  //   // console.log(wednesdaystart1._d);
+  //   // console.log(wednesdayend1._d);
+  //   // console.log(thursdaystart1._d);
+  //   // console.log(thursdayend1._d);
+  //   return;
+  // }else{
+  //   this.thursday3=false;
+  //   this.thursday4=false;
+  //   this.wednesday3=false;
+  //   this.wednesday4=false;
+  // }
   
   
-  duration = moment.duration(fridaystart.diff(thursdayend));
+  // duration = moment.duration(fridaystart.diff(thursdayend));
+  // hours = duration.asHours();
+  // console.log('Diff'+hours);
+  // if(hours<=0){
+  //   this.thursday1=true;
+  //   this.thursday2=true;
+  //   this.friday1=true;
+  //   this.friday2=true;
+  //   console.log('err');
+  //   // console.log(thursdaystart._d);
+  //   // console.log(thursdayend._d);
+  //   // console.log(fridaystart._d);
+  //   // console.log(fridayend._d);
+  //   return;
+  // }else{
+  //   this.thursday1=false;
+  //   this.thursday2=false;
+  //   this.friday1=false;
+  //   this.friday2=false;
+  // }
+
+  duration = moment.duration(fridaystart.diff(thursdayend1));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
+  if(hours<=0){
     this.thursday1=true;
     this.thursday2=true;
-    this.friday1=true;
-    this.friday2=true;
+    this.friday3=true;
+    this.friday4=true;
     console.log('err');
-    console.log(thursdaystart._d);
-    console.log(thursdayend._d);
-    console.log(fridaystart._d);
-    console.log(fridayend._d);
+    // console.log(thursdaystart._d);
+    // console.log(thursdayend._d);
+    // console.log(fridaystart1._d);
+    // console.log(fridayend1._d);
+    return;
   }else{
+    console.log('save with validation success ');
     this.thursday1=false;
     this.thursday2=false;
-    this.friday1=false;
-    this.friday2=false;
-  }
-
-
-  duration = moment.duration(fridaystart1.diff(thursdayend1));
-  hours = duration.asHours();
-  console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
-    this.thursday3=true;
-    this.thursday4=true;
-    this.friday3=true;
-    this.friday4=true;
-    console.log('err');
-    console.log(thursdaystart1._d);
-    console.log(thursdayend1._d);
-    console.log(fridaystart1._d);
-    console.log(fridayend1._d);
-  }else{
-    this.thursday3=false;
-    this.thursday4=false;
     this.friday3=false;
     this.friday4=false;
   }
+
+
+  // duration = moment.duration(fridaystart1.diff(thursdayend1));
+  // hours = duration.asHours();
+  // console.log('Diff'+hours);
+  // if(hours<=0){
+  //   this.thursday3=true;
+  //   this.thursday4=true;
+  //   this.friday3=true;
+  //   this.friday4=true;
+  //   console.log('err');
+  //   // console.log(thursdaystart1._d);
+  //   // console.log(thursdayend1._d);
+  //   // console.log(fridaystart1._d);
+  //   // console.log(fridayend1._d);
+  //   return;
+  // }else{
+  //   this.thursday3=false;
+  //   this.thursday4=false;
+  //   this.friday3=false;
+  //   this.friday4=false;
+  // }
   
   
-  duration = moment.duration(saturdaystart.diff(fridayend));
+  // duration = moment.duration(saturdaystart.diff(fridayend));
+  // hours = duration.asHours();
+  // console.log('Diff'+hours);
+  // if(hours<=0){
+  //   this.friday1=true;
+  //   this.friday2=true;
+  //   this.saturday1=true;
+  //   this.saturday2=true;
+  //   console.log('err');
+  //   // console.log(fridaystart._d);
+  //   // console.log(fridayend._d);
+  //   // console.log(saturdaystart._d);
+  //   // console.log(saturdayend._d);
+  //   return;
+  // }else{
+  //   this.friday1=false;
+  //   this.friday2=false;
+  //   this.saturday1=false;
+  //   this.saturday2=false;
+  // }
+
+
+  duration = moment.duration(saturdaystart.diff(fridayend1));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
-    this.friday1=true;
-    this.friday2=true;
+  if(hours<=0){
+    this.friday3=true;
+    this.friday4=true;
     this.saturday1=true;
     this.saturday2=true;
     console.log('err');
-    console.log(fridaystart._d);
-    console.log(fridayend._d);
-    console.log(saturdaystart._d);
-    console.log(saturdayend._d);
+    // console.log(fridaystart1._d);
+    // console.log(fridayend1._d);
+    // console.log(saturdaystart._d);
+    // console.log(saturdayend._d);
+    return;
   }else{
-    this.friday1=false;
-    this.friday2=false;
+    console.log('save with validation success ');
+    this.friday3=false;
+    this.friday4=false;
     this.saturday1=false;
     this.saturday2=false;
   }
 
-  duration = moment.duration(saturdaystart1.diff(fridayend1));
-  hours = duration.asHours();
-  console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
-    this.friday3=true;
-    this.friday4=true;
-    this.saturday3=true;
-    this.saturday4=true;
-    console.log('err');
-    console.log(fridaystart1._d);
-    console.log(fridayend1._d);
-    console.log(saturdaystart1._d);
-    console.log(saturdayend1._d);
-  }else{
-    this.friday3=false;
-    this.friday4=false;
-    this.saturday3=false;
-    this.saturday4=false;
-  }
+  // duration = moment.duration(saturdaystart1.diff(fridayend1));
+  // hours = duration.asHours();
+  // console.log('Diff'+hours);
+  // if(hours<=0){
+  //   this.friday3=true;
+  //   this.friday4=true;
+  //   this.saturday3=true;
+  //   this.saturday4=true;
+  //   console.log('err');
+  //   // console.log(fridaystart1._d);
+  //   // console.log(fridayend1._d);
+  //   // console.log(saturdaystart1._d);
+  //   // console.log(saturdayend1._d);
+  //   return;
+  // }else{
+  //   this.friday3=false;
+  //   this.friday4=false;
+  //   this.saturday3=false;
+  //   this.saturday4=false;
+  // }
 
   
-  duration = moment.duration(sundaystart.diff(saturdayend));
+  // duration = moment.duration(sundaystart.diff(saturdayend));
+  // hours = duration.asHours();
+  // console.log('Diff'+hours);
+  // if(hours<=0){
+  //   this.sunday1=true;
+  //   this.sunday2=true;
+  //   this.saturday1=true;
+  //   this.saturday2=true;
+  //   console.log('err');
+  //   // console.log(saturdaystart._d);
+  //   // console.log(saturdayend._d);
+  //   // console.log(sundaystart._d);
+  //   // console.log(sundayend._d);
+  //   return;
+  // }else{
+  //   this.sunday1=false;
+  //   this.sunday2=false;
+  //   this.saturday1=false;
+  //   this.saturday2=false;
+  // }
+
+
+
+  duration = moment.duration(sundaystart.diff(saturdayend1));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
+  if(hours<=0){
     this.sunday1=true;
     this.sunday2=true;
-    this.saturday1=true;
-    this.saturday2=true;
-    console.log('err');
-    console.log(saturdaystart._d);
-    console.log(saturdayend._d);
-    console.log(sundaystart._d);
-    console.log(sundayend._d);
-  }else{
-    this.sunday1=false;
-    this.sunday2=false;
-    this.saturday1=false;
-    this.saturday2=false;
-  }
-
-
-  duration = moment.duration(sundaystart1.diff(saturdayend1));
-  hours = duration.asHours();
-  console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
-    this.sunday3=true;
-    this.sunday4=true;
     this.saturday3=true;
     this.saturday4=true;
     console.log('err');
-    console.log(saturdaystart1._d);
-    console.log(saturdayend1._d);
-    console.log(sundaystart1._d);
-    console.log(sundayend1._d);
+    // console.log(saturdaystart1._d);
+    // console.log(saturdayend1._d);
+    // console.log(sundaystart._d);
+    // console.log(sundayend._d);
+    return;
   }else{
-    this.sunday3=false;
-    this.sunday4=false;
+    console.log('save with validation success ');
+    this.sunday1=false;
+    this.sunday2=false;
     this.saturday3=false;
     this.saturday4=false;
   }
+
+
+
+
+  // duration = moment.duration(sundaystart1.diff(saturdayend1));
+  // hours = duration.asHours();
+  // console.log('Diff'+hours);
+  // if(hours<=0){
+  //   this.sunday3=true;
+  //   this.sunday4=true;
+  //   this.saturday3=true;
+  //   this.saturday4=true;
+  //   console.log('err');
+  //   // console.log(saturdaystart1._d);
+  //   // console.log(saturdayend1._d);
+  //   // console.log(sundaystart1._d);
+  //   // console.log(sundayend1._d);
+  //   return;
+  // }else{
+  //   this.sunday3=false;
+  //   this.sunday4=false;
+  //   this.saturday3=false;
+  //   this.saturday4=false;
+  // }
 
   duration = moment.duration(tuesdaystart1.diff(tuesdayend));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
+  if(hours<=0){
       this.tuesday1=true;
       this.tuesday2=true;
       this.tuesday3=true;
       this.tuesday4=true;
     console.log('err');
-    console.log(tuesdaystart._d);
-    console.log(tuesdayend._d);
-    console.log(tuesdaystart1._d);
-    console.log(tuesdayend1._d);
+    // console.log(tuesdaystart._d);
+    // console.log(tuesdayend._d);
+    // console.log(tuesdaystart1._d);
+    // console.log(tuesdayend1._d);
+    return;
   }else{
+    console.log('save with validation success ');
     this.tuesday1=false;
     this.tuesday2=false;
     this.tuesday3=false;
@@ -694,17 +861,19 @@ mondaystart1.set({
   duration = moment.duration(wednesdaystart1.diff(wednesdayend));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
+  if(hours<=0){
     this.wednesday1=true;
     this.wednesday2=true;
     this.wednesday3=true;
     this.wednesday4=true;
     console.log('err');
-    console.log(wednesdaystart._d);
-    console.log(wednesdayend._d);
-    console.log(wednesdaystart1._d);
-    console.log(wednesdayend1._d);
+    // console.log(wednesdaystart._d);
+    // console.log(wednesdayend._d);
+    // console.log(wednesdaystart1._d);
+    // console.log(wednesdayend1._d);
+    return;
   }else{
+    console.log('save with validation success ');
     this.wednesday1=false;
     this.wednesday2=false;
     this.wednesday3=false;
@@ -715,17 +884,19 @@ mondaystart1.set({
   duration = moment.duration(thursdaystart1.diff(thursdayend));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
+  if(hours<=0){
     this.thursday1=true;
     this.thursday2=true;
     this.thursday3=true;
     this.thursday4=true;
     console.log('err');
-    console.log(thursdaystart._d);
-    console.log(thursdayend._d);
-    console.log(thursdaystart1._d);
-    console.log(thursdayend1._d);
+    // console.log(thursdaystart._d);
+    // console.log(thursdayend._d);
+    // console.log(thursdaystart1._d);
+    // console.log(thursdayend1._d);
+    return;
   }else{
+    console.log('save with validation success ');
     this.thursday1=false;
     this.thursday2=false;
     this.thursday3=false;
@@ -736,17 +907,19 @@ mondaystart1.set({
   duration = moment.duration(fridaystart1.diff(fridayend));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
+  if(hours<=0){
     this.friday1=true;
     this.friday2=true;
     this.friday3=true;
     this.friday4=true;
     console.log('err');
-    console.log(fridaystart._d);
-    console.log(fridayend._d);
-    console.log(fridaystart1._d);
-    console.log(fridayend1._d);
+    // console.log(fridaystart._d);
+    // console.log(fridayend._d);
+    // console.log(fridaystart1._d);
+    // console.log(fridayend1._d);
+    return;
   }else{
+    console.log('save with validation success ');
     this.friday1=false;
     this.friday2=false;
     this.friday3=false;
@@ -757,17 +930,19 @@ mondaystart1.set({
   duration = moment.duration(saturdaystart1.diff(saturdayend));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
+  if(hours<=0){
     this.saturday1=true;
     this.saturday2=true;
     this.saturday3=true;
     this.saturday4=true;
     console.log('err');
-    console.log(saturdaystart._d);
-    console.log(saturdayend._d);
-    console.log(saturdaystart1._d);
-    console.log(saturdayend1._d);
+    // console.log(saturdaystart._d);
+    // console.log(saturdayend._d);
+    // console.log(saturdaystart1._d);
+    // console.log(saturdayend1._d);
+    return;
   }else{
+    console.log('save with validation success ');
     this.saturday1=false;
     this.saturday2=false;
     this.saturday3=false;
@@ -778,17 +953,19 @@ mondaystart1.set({
   duration = moment.duration(sundaystart1.diff(sundayend));
   hours = duration.asHours();
   console.log('Diff'+hours);
-  if((hours<=0)||(hours>=24)){
+  if(hours<=0){
     this.sunday1=true;
     this.sunday2=true;
     this.sunday3=true;
     this.sunday4=true;
     console.log('err');
-    console.log(sundaystart._d);
-    console.log(sundayend._d);
-    console.log(sundaystart1._d);
-    console.log(sundayend1._d);
+    // console.log(sundaystart._d);
+    // console.log(sundayend._d);
+    // console.log(sundaystart1._d);
+    // console.log(sundayend1._d);
+    return;
   }else{
+    console.log('save with validation success ');
     this.sunday1=false;
     this.sunday2=false;
     this.sunday3=false;
